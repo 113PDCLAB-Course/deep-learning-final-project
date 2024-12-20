@@ -1,0 +1,15 @@
+services:
+  deep_learning:
+    build: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    shm_size: "10gb"
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app

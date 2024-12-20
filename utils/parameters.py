@@ -1,0 +1,6 @@
+train_path = "/app/datasets/train"
+test_path = "/app/datasets/test"
+val_path = "/app/datasets/valid"
+train_mask_path = "/app/datasets/train_masks"
+test_mask_path = "/app/datasets/test_masks"
+val_mask_path = "/app/datasets/valid_masks"
