@@ -35,8 +35,9 @@ def training_models(models):
     for model_name, model in models.items():
         model.fit(
             train_dataset,
-            epochs=5,
+            epochs=100,
             validation_data=val_dataset,
+            batch_size=2,
             verbose=1,
         )
         model.save(f"/app/weights/{model_name}.weights.h5")
