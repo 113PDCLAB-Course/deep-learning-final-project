@@ -31,7 +31,14 @@ ResUNet++ implement Atrous **Spatial Pyramid Pooling** (ASPP) for multi-scale fe
 
 ### 4. Challenge we faced
 - RAM too small
+
+**solution:**
 - Early stop
+
+**solution:**
+- Disconnect weight file clear
+
+**solution:**
 ### 5. Conclusion
 #### (1) Result
 
