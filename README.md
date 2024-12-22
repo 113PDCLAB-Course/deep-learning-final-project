@@ -27,7 +27,7 @@ ResUNet++ implement Atrous **Spatial Pyramid Pooling** (ASPP) for multi-scale fe
 - Adding Early Stopping and Model Checkpoint.
 ### 3. Execution
 #### (1) Execution Environment
-
+![image](./environment.jpg)
 
 ### 4. Challenge we faced
 - RAM too small
