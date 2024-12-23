@@ -16,7 +16,7 @@ label all in, because we use classification, and it's image. We have four files,
 We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze these three models below :
 - **UNet**
 
-**main feature:** Classic model designed for medical image segmentation. Adopts an encoder-decoder architecture and uses skip connections in detailed features are introduced during the decoding process.
+**Main feature:** Classic model designed for medical image segmentation. Adopts an encoder-decoder architecture and uses skip connections in detailed features are introduced during the decoding process.
 
 **Advantage:** The computing cost is low, the architecture is simple and easy to deploy.
 
