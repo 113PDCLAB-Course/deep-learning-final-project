@@ -17,8 +17,11 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 - **UNet**
 
 **main feature:** Classic model designed for medical image segmentation. Adopts an encoder-decoder architecture and uses skip connections in detailed features are introduced during the decoding process.
+
 **Advantage:** The computing cost is low, the architecture is simple and easy to deploy.
+
 **Limitation:** Limited performance in capturing global context and handling small targets.
+
 - **ResNext50**
 
 ResNext50 combine the architecture of ResNet and Next, uses **grouped convolution** to reduce parameter count, which helps divide input channels into groups for parallel processing, reducing computational complexity. Another thing is that ResNext50 add **incorporates skip connections**, allowing direct information flow between layers, helping prevent gradient vanishing and enabling better feature preservation. It also mmploy **Batch Normalization and ReLU activation functions**, provide stabilize training and prevent vanishing gradients.
