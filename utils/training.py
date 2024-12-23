@@ -62,7 +62,7 @@ def training_models(models):
         )
 
         # Save model and clear memory
-        model.save(f"/app/weights/{model_name}.weights.h5")
+        model.save_weights(f"/app/weights/{model_name}.weights.h5")
         print(f"Model {model_name} saved")
 
         # Clear memory
