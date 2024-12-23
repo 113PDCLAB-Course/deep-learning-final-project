@@ -1,10 +1,13 @@
-from typing import Tuple
-
 import numpy as np
 import tensorflow as tf
+from sklearn.metrics import classification_report
 
 
 def dice_coefficient(y_true, y_pred, smooth=1e-7) -> float:
+    # Convert inputs to float32
+    y_true = tf.cast(y_true, tf.float32)
+    y_pred = tf.cast(y_pred, tf.float32)
+
     intersection = tf.reduce_sum(y_true * y_pred)
     union = tf.reduce_sum(y_true) + tf.reduce_sum(y_pred)
     dice = (2.0 * intersection + smooth) / (union + smooth)
@@ -16,9 +19,7 @@ def dice_loss(y_true, y_pred) -> float:
     return loss
 
 
-def cal_accuracy(
-    model: tf.keras.Model, dataset: tf.data.Dataset
-) -> Tuple[float, float, float]:
+def cal_accuracy(model: tf.keras.Model, dataset: tf.data.Dataset):
     batch_size = 2
     predictions = []
     y_true = []
@@ -44,4 +45,19 @@ def cal_accuracy(
     dice_coefficient_score = dice_coefficient(y_true, y_pred)
     dice_loss_score = dice_loss(y_true, y_pred)
 
-    return accuracy, dice_coefficient_score, dice_loss_score
+    print(f"Pixel-wise Accuracy: {accuracy:.4f}")
+    print(f"Dice Coefficient: {dice_coefficient_score:.4f}")
+    print(f"Dice Loss: {dice_loss_score:.4f}")
+
+    # Flatten arrays for classification report
+    y_true_flat = y_true.ravel()
+    y_pred_flat = y_pred_binary.ravel()
+
+    # Generate classification report for binary data
+    try:
+        report = classification_report(
+            y_true_flat, y_pred_flat, target_names=["Background", "Object"]
+        )
+        print(report)
+    except ValueError as e:
+        print(f"Could not generate classification report: {e}")
