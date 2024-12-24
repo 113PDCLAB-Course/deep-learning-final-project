@@ -49,9 +49,9 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 #### (4) Evaluation 
 - **Model Performance Metrics :**
   
-  - Evaluates test loss and accuracy on the test dataset using <span style="color: ##E74C3C">**model.evaluate()**</span>.
+  - Evaluates test loss and accuracy on the test dataset using <font color="#2E86C1">**model.evaluate()**</font>.
     
-  - Generates detailed metrics through <span style="color: ##E74C3C">**classification_report()**</span> including precision, recall, and F1-score.
+  - Generates detailed metrics through <font color="#2E86C1">**classification_report()**</font> including precision, recall, and F1-score.
 
 - **Training History Visualization :**
 
@@ -63,7 +63,7 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 
 - **Confusion Matrix Analysis :**
 
-  - Creates a confusion matrix using <span style="color: ##E74C3C">**confusion_matrix()**</span> to show true positives, false positives, true negatives, and false negatives.
+  - Creates a confusion matrix using <font color="#2E86C1">**confusion_matrix()**</font> to show true positives, false positives, true negatives, and false negatives.
     
   - Visualizes the matrix as a heatmap using seaborn for better interpretation.
     
