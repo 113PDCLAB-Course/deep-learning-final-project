@@ -16,38 +16,59 @@ The following pre-processing was applied to each image:
 
 #### (2) Feature we choose
 The dataset includes 2146 images.Tumors are annotated in COCO Segmentation format, these 2146 pictures are all pictures with tumors. We use all labels because we are figuring out the classification task.
-- test data: 215 images
-- train data: 1502 images
-- validation data: 429 images
+- test data : 215 images
+- train data : 1502 images
+- validation data : 429 images
 
 #### (3) Model
 We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze these three models below :
 - **UNet**
 
-  - **Main feature:** Classic model designed for medical image segmentation. Adopts an encoder-decoder architecture and uses skip connections in detailed features are introduced during the decoding process.
+  - **Main feature :** Classic model designed for medical image segmentation. Adopts an encoder-decoder architecture and uses skip connections in detailed features are introduced during the decoding process.
 
-  - **Advantage:** The computing cost is low, the architecture is simple and easy to deploy.
+  - **Advantage :** The computing cost is low, the architecture is simple and easy to deploy.
 
-  - **Limitation:** Limited performance in capturing global context and handling small targets.
+  - **Limitation :** Limited performance in capturing global context and handling small targets.
 
 - **ResNext50**
 
-  - **Main feature:** Combines ResNet and Next with grouped convolutions, skip connections, and Batch Normalization with ReLU.
+  - **Main feature :** Combines ResNet and Next with grouped convolutions, skip connections, and Batch Normalization with ReLU.
     
-  - **Advantage:** Reduces computation cost while maintaining performance, enables better gradient flow, and provides stable training.
+  - **Advantage :** Reduces computation cost while maintaining performance, enables better gradient flow, and provides stable training.
  
-  - **Limitation:** High memory usage, complex implementation, and requires careful hyperparameter tuning.
+  - **Limitation :** High memory usage, complex implementation, and requires careful hyperparameter tuning.
 
 - **ResUNet++**
 
-  - **Main feature:** Enhanced 3D encoding-decoding Model. Use pre-training ResNet50 backbone and 3D dense convolution blocks and volumes product transpose layer.
+  - **Main feature :** Enhanced 3D encoding-decoding Model. Use pre-training ResNet50 backbone and 3D dense convolution blocks and volumes product transpose layer.
 
-  - **Application areas:** Multimodal MRI brain tumor segmentation.
+  - **Application areas :** Multimodal MRI brain tumor segmentation.
 
-  - **Advantage:** Handling multimodal volume numbers excellent performance, amd improve segmentation accuracy and efficiency.
+  - **Advantage :** Handling multimodal volume numbers excellent performance, amd improve segmentation accuracy and efficiency.
 
 #### (4) Evaluation 
-test_loss, test_accuracy, Accuracy Curve, Loss Curve, Confusion Matrix
+- **Model Performance Metrics : **
+  
+  - Evaluates test loss and accuracy on the test dataset using **model.evaluate()**.
+    
+  - Generates detailed metrics through **classification_report()** including precision, recall, and F1-score.
+
+- **Training History Visualization :**
+
+  - Plots accuracy curves comparing training and validation accuracy over epochs.
+    
+  - Shows loss curves tracking training and validation loss progression.
+    
+  - Helps identify potential overfitting or underfitting issues.
+
+- **Confusion Matrix Analysis :**
+
+  - Creates a confusion matrix using **confusion_matrix()** to show true positives, false positives, true negatives, and false negatives.
+    
+  - Visualizes the matrix as a heatmap using seaborn for better interpretation.
+    
+  - Provides insight into model's prediction patterns and error types.
+    
 #### (5) Training Strategy
 We mainly focus on the data enhancement part (data preprocessing part code)
 ### 4. Execution
@@ -77,4 +98,3 @@ We mainly focus on the data enhancement part (data preprocessing part code)
 -> We provide early stop for 10 Epoch, if accuracy between 10 Epoch didn't improve, we stop the training.
 ### 6. Conclusion
 #### (1) Result
-
