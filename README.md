@@ -131,3 +131,10 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 -> We provide early stop for 10 Epoch, if accuracy between 10 Epoch didn't improve, we stop the training.
 ### 6. Conclusion
 #### (1) Result
+- UNet
+
+
+
+- ResNext50
+
+- ResUNet++
