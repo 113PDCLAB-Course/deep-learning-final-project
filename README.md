@@ -26,20 +26,20 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 
   - **Main feature:** Classic model designed for medical image segmentation. Adopts an encoder-decoder architecture and uses skip connections in detailed features are introduced during the decoding process.
 
-**Advantage:** The computing cost is low, the architecture is simple and easy to deploy.
+  - **Advantage:** The computing cost is low, the architecture is simple and easy to deploy.
 
-**Limitation:** Limited performance in capturing global context and handling small targets.
+  - **Limitation:** Limited performance in capturing global context and handling small targets.
 
 - **ResNext50**
 
 ResNext50 combine the architecture of ResNet and Next, uses **grouped convolution** to reduce parameter count, which helps divide input channels into groups for parallel processing, reducing computational complexity. Another thing is that ResNext50 add **incorporates skip connections**, allowing direct information flow between layers, helping prevent gradient vanishing and enabling better feature preservation. It also mmploy **Batch Normalization and ReLU activation functions**, provide stabilize training and prevent vanishing gradients.
 - **ResUNet++**
 
-**Main feature:** Enhanced 3D encoding-decoding Model. Use pre-training ResNet50 backbone and 3D dense convolution blocks and volumes product transpose layer.
+  - **Main feature:** Enhanced 3D encoding-decoding Model. Use pre-training ResNet50 backbone and 3D dense convolution blocks and volumes product transpose layer.
 
-**Application areas:** Multimodal MRI brain tumor segmentation.
+  - **Application areas:** Multimodal MRI brain tumor segmentation.
 
-**Advantage:** Handling multimodal volume numbers excellent performance, amd improve segmentation accuracy and efficiency.
+  - **Advantage:** Handling multimodal volume numbers excellent performance, amd improve segmentation accuracy and efficiency.
 
 #### (4) Evaluation 
 test_loss, test_accuracy, Accuracy Curve, Loss Curve, Confusion Matrix
