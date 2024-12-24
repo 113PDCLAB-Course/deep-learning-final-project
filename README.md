@@ -5,18 +5,26 @@ Confirming the presence of a brain tumor requires considerable time and effort.
 #### (2) Analyze
 People cannot understand CT scans or medical instructions, explanations can be generated using LLMs.
 ### 2. Purpose
-Our purpose is to detected weather there's tomor or not.
+Our purpose is to detected whether there's tomor or not.
 ### 3. Method
 #### (1) Data processing
-We first standardizes all input images to **512x512** size and performs **normalization** to scale pixel values **between 0 and 1**, ensuring data consistency. Then, we convert the original annotation data into **binary masks** to identify tumor regions. To effectively manage large amounts of data, the system employs a data generator for batch processing, while implementing data augmentation techniques to expand the training set, and utilizes memory optimization strategies to enhance training efficiency.
+The following pre-processing was applied to each image:
+- Auto-orientation of pixel data (with EXIF-orientation stripping)
+- Resize to 512x512(Stretch) scale pixel values **between 0 and 1**, ensuring data consistency.
+- Convert the original annotation data into **binary masks** to identify tumor regions.
+- Employs a data generator for batch processing, while implementing data augmentation techniques to expand the training set.
+
 #### (2) Feature we choose
-label all in, because we use classification, and it's image. We have four files, a file is a label.
+The dataset includes 2146 images.Tumors are annotated in COCO Segmentation format, these 2146 pictures are all pictures with tumors. We use all labels because we are figuring out the classification task.
+- test data: 215 images
+- train data: 1502 images
+- validation data: 429 images
 
 #### (3) Model
 We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze these three models below :
 - **UNet**
 
-**Main feature:** Classic model designed for medical image segmentation. Adopts an encoder-decoder architecture and uses skip connections in detailed features are introduced during the decoding process.
+  - **Main feature:** Classic model designed for medical image segmentation. Adopts an encoder-decoder architecture and uses skip connections in detailed features are introduced during the decoding process.
 
 **Advantage:** The computing cost is low, the architecture is simple and easy to deploy.
 
