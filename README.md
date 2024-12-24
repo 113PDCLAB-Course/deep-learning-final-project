@@ -67,15 +67,12 @@ We mainly focus on the data enhancement part (data preprocessing part code)
 - **display**
 ![result](./result.PNG)
 ### 5. Challenge we faced
-- RAM too small
-
-**solution:**
-- Early stop
-
-**solution:** 
-- Disconnect weight file clear
-  
-**solution:** save it to Google Drive
+- GPU VRAM too small
+-> we subscribe Google colab pro. 
+- We are not familiar with how to store weight, in addition, if Google Colab is disconnect, weight cannot be store.
+-> save it to Google Drive.
+- Time Consuming
+-> We provide early stop for 10 Epoch, if accuracy between 10 Epoch didn't improve, we stop the training.
 ### 6. Conclusion
 #### (1) Result
 
