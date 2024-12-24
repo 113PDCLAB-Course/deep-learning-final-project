@@ -49,9 +49,9 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 #### (4) Evaluation 
 - **Model Performance Metrics :**
   
-  - Evaluates test loss and accuracy on the test dataset using <span style="color: #2E86C1">**model.evaluate()**</span>.
+  - Evaluates test loss and accuracy on the test dataset using <span style="color: ##E74C3C">**model.evaluate()**</span>.
     
-  - Generates detailed metrics through <span style="color: #2E86C1">**classification_report()**</span> including precision, recall, and F1-score.
+  - Generates detailed metrics through <span style="color: ##E74C3C">**classification_report()**</span> including precision, recall, and F1-score.
 
 - **Training History Visualization :**
 
@@ -63,14 +63,47 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 
 - **Confusion Matrix Analysis :**
 
-  - Creates a confusion matrix using <span style="color: #2E86C1">**confusion_matrix()**</span> to show true positives, false positives, true negatives, and false negatives.
+  - Creates a confusion matrix using <span style="color: ##E74C3C">**confusion_matrix()**</span> to show true positives, false positives, true negatives, and false negatives.
     
   - Visualizes the matrix as a heatmap using seaborn for better interpretation.
     
   - Provides insight into model's prediction patterns and error types.
     
 #### (5) Training Strategy
-We mainly focus on the data enhancement part (data preprocessing part code)
+- **Data Preprocessing Strategy :**
+
+  - Input image resizing to (512, 512) with nearest neighbor interpolation.
+    
+  - Normalization of images to range [0,1].
+    
+  - Binary mask conversion with threshold 0.5.
+
+- **Dataset Configuration :**
+
+  - Batch size: 2 (optimized for memory efficiency).
+    
+  - Random shuffling with buffer size 1000.
+
+- **Model Evaluation Strategy :**
+
+  - **Primary metrics :**
+
+    - Pixel-wise accuracy
+    - Dice coefficient
+    - Dice loss
+
+  - **Additional analysis :**
+
+    - Classification report with background/object classes.
+    - Confusion matrix visualization.
+    - Training/validation curves monitoring.
+
+- **Performance Monitoring :**
+
+  - Early stopping with patience=10 to prevent overfitting.
+  - Model checkpointing to save best weights.
+  - Regular validation set evaluation
+
 ### 4. Execution
 #### (1) Execution Environment
 ![image](./environment.jpg)
