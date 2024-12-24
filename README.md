@@ -61,7 +61,11 @@ We mainly focus on the data enhancement part (data preprocessing part code)
   - step3 : The returned content is combined with the mask image.
   - step4 : Send it to the pdf file generator to generate a pdf report and download it.
 - **Feature**
-- 
+  - Provide basic condition analysis.
+  - In addition to analyzing the condition, patients are told that they should target those patients who do not receive medical treatment.
+  - Provide directions for doctors to evaluate and diagnose.
+- **display**
+  
 ### 5. Challenge we faced
 - RAM too small
 
