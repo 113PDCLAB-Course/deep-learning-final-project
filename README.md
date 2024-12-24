@@ -32,7 +32,12 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 
 - **ResNext50**
 
-ResNext50 combine the architecture of ResNet and Next, uses **grouped convolution** to reduce parameter count, which helps divide input channels into groups for parallel processing, reducing computational complexity. Another thing is that ResNext50 add **incorporates skip connections**, allowing direct information flow between layers, helping prevent gradient vanishing and enabling better feature preservation. It also mmploy **Batch Normalization and ReLU activation functions**, provide stabilize training and prevent vanishing gradients.
+  - **Main feature:** Combines ResNet and Next with grouped convolutions, skip connections, and Batch Normalization with ReLU.
+    
+  - **Advantage:** Reduces computation cost while maintaining performance, enables better gradient flow, and provides stable training.
+ 
+  - **Limitation:** High memory usage, complex implementation, and requires careful hyperparameter tuning.
+
 - **ResUNet++**
 
   - **Main feature:** Enhanced 3D encoding-decoding Model. Use pre-training ResNet50 backbone and 3D dense convolution blocks and volumes product transpose layer.
@@ -48,6 +53,8 @@ We mainly focus on the data enhancement part (data preprocessing part code)
 ### 4. Execution
 #### (1) Execution Environment
 ![image](./environment.jpg)
+
+#### (2) LLM part
 
 ### 5. Challenge we faced
 - RAM too small
