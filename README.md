@@ -47,7 +47,7 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
   - **Advantage :** Handling multimodal volume numbers excellent performance, amd improve segmentation accuracy and efficiency.
 
 #### (4) Evaluation 
-- **Model Performance Metrics : **
+- **Model Performance Metrics :**
   
   - Evaluates test loss and accuracy on the test dataset using **model.evaluate()**.
     
