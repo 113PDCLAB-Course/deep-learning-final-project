@@ -64,13 +64,15 @@ We mainly focus on the data enhancement part (data preprocessing part code)
   - Provide basic condition analysis.
   - In addition to analyzing the condition, patients are told that they should target those patients who do not receive medical treatment.
   - Provide directions for doctors to evaluate and diagnose.
+
 - **display**
+
 ![result](./result.PNG)
 ### 5. Challenge we faced
 - GPU VRAM too small
--> we subscribe Google colab pro. 
+-> we subscribe Google Colab Pro. 
 - We are not familiar with how to store weight, in addition, if Google Colab is disconnect, weight cannot be store.
--> save it to Google Drive.
+-> Altomatically save it to Google Drive rather than manual download it.
 - Time Consuming
 -> We provide early stop for 10 Epoch, if accuracy between 10 Epoch didn't improve, we stop the training.
 ### 6. Conclusion
