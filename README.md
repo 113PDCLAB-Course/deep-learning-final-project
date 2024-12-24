@@ -131,14 +131,21 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 -> We provide early stop for 10 Epoch, if accuracy between 10 Epoch didn't improve, we stop the training.
 ### 6. Conclusion
 #### (1) Result
-- UNet
+- **UNet**
 
 ![UNet](./UNet.PNG)
 
-- ResNext50
+- **ResNext50**
 
 ![ResNext50](./ResNext50.PNG)
 
-- ResUNet++
+- **ResUNet++**
 
 ![ResUNet++](./ResUNet++.PNG)
+
+#### (2) Analyze
+- In terms of Dice coefficient, the three models performed similarly, with **ResUNet++** showing a slight advantage (0.0695).
+- The class imbalance issue is evident: all models demonstrate a clear trade-off when handling background and tumor classes.
+- False positive rate issue: Both ResNext50 and ResUNet++ tend to over-predict tumor regions.
+- UNet achieved the best overall pixel-wise accuracy, possibly due to its better balance in handling class trade-offs.
+
