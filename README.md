@@ -65,7 +65,7 @@ We mainly focus on the data enhancement part (data preprocessing part code)
   - In addition to analyzing the condition, patients are told that they should target those patients who do not receive medical treatment.
   - Provide directions for doctors to evaluate and diagnose.
 - **display**
-  
+![result](./result.png)
 ### 5. Challenge we faced
 - RAM too small
 
