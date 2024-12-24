@@ -27,7 +27,11 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 ResNext50 combine the architecture of ResNet and Next, uses **grouped convolution** to reduce parameter count, which helps divide input channels into groups for parallel processing, reducing computational complexity. Another thing is that ResNext50 add **incorporates skip connections**, allowing direct information flow between layers, helping prevent gradient vanishing and enabling better feature preservation. It also mmploy **Batch Normalization and ReLU activation functions**, provide stabilize training and prevent vanishing gradients.
 - **ResUNet++**
 
-ResUNet++ implement Atrous **Spatial Pyramid Pooling** (ASPP) for multi-scale feature processing, which makes the model capture features at multiple scales using different dilation rates, allowing the network to handle objects of various sizes, and add **spatial attention mechanism** (Attention blocks), helping the network focus on relevant spatial regions by assigning different weights to different areas of the feature map, enhancing the model's ability to identify important spatial features.
+**Main feature:** Enhanced 3D encoding-decoding Model. Use pre-training ResNet50 backbone and 3D dense convolution blocks and volumes product transpose layer.
+
+**Application areas:** Multimodal MRI brain tumor segmentation.
+
+**Advantage:** Handling multimodal volume numbers excellent performance, amd improve segmentation accuracy and efficiency.
 
 #### (4) Evaluation 
 test_loss, test_accuracy, Accuracy Curve, Loss Curve, Confusion Matrix
