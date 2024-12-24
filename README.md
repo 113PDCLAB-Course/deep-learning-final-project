@@ -133,8 +133,12 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 #### (1) Result
 - UNet
 
-
+![UNet](./UNet.PNG)
 
 - ResNext50
 
+![ResNext50](./ResNext50.PNG)
+
 - ResUNet++
+
+![ResUNet++](./ResUNet++.PNG)
