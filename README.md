@@ -72,7 +72,7 @@ We mainly focus on the data enhancement part (data preprocessing part code)
 - GPU VRAM too small
 -> we subscribe Google Colab Pro. 
 - We are not familiar with how to store weight, in addition, if Google Colab is disconnect, weight cannot be store.
--> Altomatically save it to Google Drive rather than manual download it.
+-> Automatically save it to Google Drive rather than manual download it.
 - Time Consuming
 -> We provide early stop for 10 Epoch, if accuracy between 10 Epoch didn't improve, we stop the training.
 ### 6. Conclusion
