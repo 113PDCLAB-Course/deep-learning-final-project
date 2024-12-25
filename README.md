@@ -142,31 +142,72 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
   - Dice Loss: 0.3887  -> Complementary to Dice Coefficient, lower value indicates better performance
 
 - **Class-wise Performance :**
-  - Background class:
+  - Background class: This shows excellent performance in identifying non-tumor regions.
 
     - Precision: 0.98
     - Recall: 0.99
     - F1-score: 0.99
-    This shows excellent performance in identifying non-tumor regions
-
-  - Object (tumor) class:
+    
+  - Object (tumor) class: Tumor detection performance is relatively weaker, especially with Recall at 0.50, indicating many missed tumor regions.
 
     - Precision: 0.78
     - Recall: 0.50
     - F1-score: 0.61
-    Tumor detection performance is relatively weaker, especially with Recall at 0.50, indicating many missed tumor regions
-
+    
 - **ResNext50**
 
 ![ResNext50](./ResNext50.PNG)
+
+- **Overall Performance Metrics :** The ResNext50 shows slightly lower overall performance compared to UNet, particularly in the Dice Coefficient which dropped significantly.
+
+  - Pixel-wise Accuracy: 0.9661 -> Lower than UNet.
+  - Dice Coefficient: 0.4390  -> Lower than UNet.
+  - Dice Loss: 0.5610 -> Higher than UNet.
+
+- **Class-wise Performance :**
+
+  - Background class: Background detection remains strong.
+
+    - Precision: 0.98 -> same as UNet
+    - Recall: 0.99 -> same as UNet
+    - F1-score: 0.98 -> slightly lower than UNet's 0.99
+
+  - Object (tumor) class: Tumor detection performance is noticeably weaker than UNet.
+
+    - Precision: 0.57 -> lower than UNet's 0.78
+    - Recall: 0.36 -> lower than UNet's 0.50
+    - F1-score: 0.44 -> lower than UNet's 0.61
 
 - **ResUNet++**
 
 ![ResUNet++](./ResUNet++.PNG)
 
+- **Overall Performance Metrics :** The ResUNet++ shows the lowest performance among all three models in terms of Dice Coefficient.
+
+  - Pixel-wise Accuracy: 0.9574 (UNet: 0.9763, ResNext50: 0.9661)
+  - Dice Coefficient: 0.4105 (UNet: 0.6113, ResNext50: 0.4390)
+  - Dice Loss: 0.5895 (UNet: 0.3887, ResNext50: 0.5610)
+
+- **Class-wise Performance :**
+
+  - Background class:
+
+    - Precision: 0.98 -> same as others
+    - Recall: 0.98 -> slightly lower than 0.99 in others
+    - F1-score: 0.98 -> comparable to others
+
+  - Object (tumor) class:
+
+    - Precision: 0.42 (UNet: 0.78, ResNext50: 0.57)
+    - Recall: 0.40 (UNet: 0.50, ResNext50: 0.36)
+    - F1-score: 0.41 (UNet: 0.61, ResNext50: 0.44)
+
 #### (2) Analyze
-- In terms of Dice coefficient, the three models performed similarly, with ResUNet++ showing a slight advantage (0.0695).
-- The class imbalance issue is evident: all models demonstrate a clear trade-off when handling background and tumor classes.
-- False positive rate issue: Both ResNext50 and ResUNet++ tend to over-predict tumor regions.
-- **UNet** achieved the best overall pixel-wise accuracy, possibly due to its better balance in handling class trade-offs.
+- Model Selection:
+For best performance, choose **UNet**, and if computational resources are limited, still prefer UNet as it provides better results with **simpler architecture**.
+
+- Common Patterns:
+  - All models maintain high background class accuracy (0.96-0.98)
+  - All models struggle more with tumor detection than background
+  - Consistently higher false negatives than false positives
 
