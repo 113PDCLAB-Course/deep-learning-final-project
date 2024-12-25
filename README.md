@@ -135,7 +135,7 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 
 ![UNet](./UNet.PNG)
 
-- **&Overall Performance Metrics :**
+- **Overall Performance Metrics :**
 
   - Pixel-wise Accuracy: 0.9763  -> Indicates very high accuracy at pixel-level classification
   - Dice Coefficient: 0.6113  -> This important segmentation metric shows the overlap between predicted and actual regions
