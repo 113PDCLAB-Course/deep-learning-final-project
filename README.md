@@ -135,6 +135,27 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
 
 ![UNet](./UNet.PNG)
 
+- **&Overall Performance Metrics :**
+
+  - Pixel-wise Accuracy: 0.9763  -> Indicates very high accuracy at pixel-level classification
+  - Dice Coefficient: 0.6113  -> This important segmentation metric shows the overlap between predicted and actual regions
+  - Dice Loss: 0.3887  -> Complementary to Dice Coefficient, lower value indicates better performance
+
+- **Class-wise Performance :**
+  - Background class:
+
+    - Precision: 0.98
+    - Recall: 0.99
+    - F1-score: 0.99
+    This shows excellent performance in identifying non-tumor regions
+
+  - Object (tumor) class:
+
+    - Precision: 0.78
+    - Recall: 0.50
+    - F1-score: 0.61
+    Tumor detection performance is relatively weaker, especially with Recall at 0.50, indicating many missed tumor regions
+
 - **ResNext50**
 
 ![ResNext50](./ResNext50.PNG)
