@@ -201,7 +201,15 @@ We choose **3** models to compare, UNet, ResNext50, ResUNet++. And we analyze th
     - Precision: 0.42 (UNet: 0.78, ResNext50: 0.57)
     - Recall: 0.40 (UNet: 0.50, ResNext50: 0.36)
     - F1-score: 0.41 (UNet: 0.61, ResNext50: 0.44)
-
+**ResUnet++ pytorch version :**
+    - I write the code for pytorch version. 
+    - Compare with tensoflow pytorch advantage:
+       1. Dynamic Computational Graphs: Unlike TensorFlow's static graphs, PyTorch utilizes dynamic computation graphs, allowing for real-time modifications during model development. This flexibility is particularly beneficial for research and experimentation.
+       2. More opence sourec use it.
+    - How to use the code: 
+       1.pip install torch (install pytorch liberary)
+       2.makesure your image is under .app/brain_mri/ ，it's total have three folders. 
+       3. python resunet++.py 
 #### (2) Analyze
 - Model Selection:
 For best performance, choose **UNet**, and if computational resources are limited, still prefer UNet as it provides better results with **simpler architecture**.
@@ -210,4 +218,6 @@ For best performance, choose **UNet**, and if computational resources are limite
   - All models maintain high background class accuracy (0.96-0.98)
   - All models struggle more with tumor detection than background
   - Consistently higher false negatives than false positives
+
+
 
